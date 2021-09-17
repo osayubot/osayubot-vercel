@@ -1,0 +1,48 @@
+@import "../variables.scss";
+.container {
+  display: block;
+  width: 100%;
+  padding: 1rem 2rem;
+  min-height: 70vh;
+}
+.title {
+  line-height: 2;
+  border-bottom: 1px solid $border;
+  font-size: 2.2rem;
+}
+.content {
+  padding: 1.6rem 0 3rem;
+  line-height: 1.8;
+}
+
+.list {
+  .body {
+    padding: 0.2rem;
+    max-width: 800px;
+    margin: 2rem 0;
+  }
+  li {
+    display: block;
+    list-style: none;
+    border-top: 1px solid $border;
+    padding: 0.5rem 0;
+    &:last-child {
+      border-bottom: 1px solid $border;
+    }
+  }
+  h2 {
+    margin-bottom: 0.6rem;
+  }
+  h4 {
+    margin-bottom: 1rem;
+  }
+}
+
+.category {
+  margin-top: 1rem;
+  span {
+    background-color: $border;
+    padding: 0.2rem 0.6rem;
+    border-radius: 4px;
+  }
+}

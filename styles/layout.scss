@@ -1,0 +1,80 @@
+.navbar {
+  height: 70px;
+  width: 100%;
+  z-index: 10;
+  .top {
+    margin: 12px 2rem 0;
+    color: $black;
+    font-size: 32px;
+    font-weight: 500;
+    display: inline-block;
+    &:hover,
+    :focus,
+    :active {
+      color: $blue;
+    }
+  }
+}
+
+.icon {
+  position: fixed;
+  right: 20px;
+  top: 10px;
+  z-index: 30;
+}
+
+.menu {
+  z-index: 12;
+  position: fixed;
+  top: 0;
+  right: 0;
+  transform: translateX(360px);
+  background: $bg;
+  transition: 0.3s all ease-in-out;
+  opacity: 0;
+  padding: 2rem 1.6rem;
+  height: 100%;
+  width: 300px;
+  a {
+    line-height: 4rem;
+    font-size: 2rem;
+    display: block;
+    &:hover,
+    :focus,
+    :active {
+      color: $blue;
+    }
+  }
+  &.open {
+    opacity: 1;
+    position: fixed;
+    right: 360px;
+    &:before {
+      content: "";
+      background: $shadow;
+      width: 4000px;
+      height: 100%;
+      top: 0;
+      right: 300px;
+      position: absolute;
+      display: block;
+    }
+  }
+}
+
+.footer {
+  width: 100%;
+  height: 100px;
+  border-top: 1px solid $border;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5rem 0;
+  a {
+    &:hover,
+    :focus,
+    :active {
+      color: $blue;
+    }
+  }
+}

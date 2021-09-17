@@ -1,0 +1,22 @@
+@import "../variables.scss";
+.container {
+  min-height: 70vh;
+  padding: 0 0.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  a {
+    line-height: 2rem;
+    padding: 0.4rem 1rem;
+    background-color: $blue;
+    border-radius: 10px;
+    margin: 2em 0;
+    color: $white;
+    font-weight: 700;
+  }
+}
+
+.errorCode {
+  font-size: 4rem;
+}
