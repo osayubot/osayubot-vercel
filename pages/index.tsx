@@ -80,7 +80,8 @@ const Index = (): JSX.Element => {
 
         <div className={styles.description}>
           <p>
-            お茶の水女子大学情報科学科 &rarr; お茶の水女子大学大学院理学専攻人間
+            お茶の水女子大学情報科学科 &rarr;
+            お茶の水女子大学大学院理学専攻人間文化創成科学研究科
           </p>
           {description.map((text) => {
             return <p key={text}>{text}</p>;
