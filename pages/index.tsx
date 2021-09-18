@@ -4,7 +4,7 @@ import Link from "next/link";
 import styles from "../styles/pages/Index.module.scss";
 
 const Index = (): JSX.Element => {
-  let titleStr = "welcome to osayubot.com";
+  let titleStr = "welcome to @osayubot";
 
   const [count, setCount] = useState<number>(0);
   const [intervalId, setIntervalId] = useState<NodeJS.Timer>();
@@ -32,7 +32,7 @@ const Index = (): JSX.Element => {
     "現在は大学生の傍、フリーランスエンジニアとして複数の業務委託を請け負っている。",
   ];
   const skills =
-    "JavaScript，TypeScript，firebase，Vue，Nuxt.js，React，Next.js，React Native，Google App Script，Node.js，python，SQL，GitHub，verecel，C言語，Java など";
+    "JavaScript，TypeScript，firebase，Vue，Nuxt.js，React，Next.js，React Native，Google App Script，Node.js，python，SQL，GitHub，vercel，C言語，Java など";
 
   return (
     <div className={styles.container}>

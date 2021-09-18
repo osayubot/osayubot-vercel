@@ -6,12 +6,12 @@ const ProfilePage = (): JSX.Element => {
     <div className={styles.container}>
       <div className={styles.section}>
         <h2>基本情報</h2>
-        <h3>kai sayuri@osayu</h3>
+        <h3>kai sayuri @osayu</h3>
         <p>兵庫県出身・東京都在住</p>
         <p>2018年 宮崎県立宮崎西高校卒業</p>
         <p>2022年 お茶の水女子大学理学部情報科学学科卒業予定</p>
         <p>
-          2023年 お茶の水女子大学大学院理学専攻人間文化創成科学研究科入学予定
+          2022年 お茶の水女子大学大学院理学専攻人間文化創成科学研究科入学予定
         </p>
       </div>
       <div className={styles.section}>
