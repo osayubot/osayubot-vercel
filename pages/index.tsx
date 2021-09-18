@@ -89,16 +89,15 @@ const Index = (): JSX.Element => {
         </div>
         <div className={styles.description}>
           <h4>扱える言語や技術</h4>
-          <p>
-            {skills.map((skill, index) => {
-              return (
-                <span key={index}>
-                  {skill}
-                  {index === skills.length - 1 ? " など" : "、"}
-                </span>
-              );
-            })}
-          </p>
+
+          {skills.map((skill, index) => {
+            return (
+              <span key={index}>
+                {skill}
+                {index === skills.length - 1 ? " など" : "，"}
+              </span>
+            );
+          })}
         </div>
         <Link href="https://github.com/osayubot">
           <a className={styles.social}>

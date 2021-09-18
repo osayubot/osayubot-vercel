@@ -12,7 +12,7 @@ const BlogId = ({ blog }: { blog: Blog }): JSX.Element => {
           __html: `${blog.content}`,
         }}
       />
-      <p>{blog.date.slice(0, 10)}</p>
+      <p>投稿：{blog.date.slice(0, 10)}</p>
     </div>
   );
 };
