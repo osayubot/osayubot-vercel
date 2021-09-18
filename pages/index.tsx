@@ -4,7 +4,7 @@ import Link from "next/link";
 import styles from "../styles/pages/Index.module.scss";
 
 const Index = (): JSX.Element => {
-  let titleStr = "welcome to osayubot.com";
+  let titleStr = "welcome to\nosayubot.com";
 
   const [count, setCount] = useState<number>(0);
   const [intervalId, setIntervalId] = useState<NodeJS.Timer>();
