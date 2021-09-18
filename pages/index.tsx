@@ -31,24 +31,8 @@ const Index = (): JSX.Element => {
     "モバイルアプリ開発を機にプログラミングにハマる。",
     "現在は大学生の傍、フリーランスエンジニアとして複数の業務委託を請け負っている。",
   ];
-  const skills = [
-    "JavaScript",
-    "TypeScript",
-    "firebase",
-    "Vue",
-    "Nuxt.js",
-    "React",
-    "Next.js",
-    "React Native",
-    "Google App Script",
-    "Node.js",
-    "python",
-    "SQL",
-    "GitHub",
-    "verecel",
-    "C言語",
-    "Java",
-  ];
+  const skills =
+    "JavaScript，TypeScript，firebase，Vue，Nuxt.js，React，Next.js，React Native，Google App Script，Node.js，python，SQL，GitHub，verecel，C言語，Java など";
 
   return (
     <div className={styles.container}>
@@ -89,15 +73,7 @@ const Index = (): JSX.Element => {
         </div>
         <div className={styles.description}>
           <h4>扱える言語や技術</h4>
-
-          {skills.map((skill, index) => {
-            return (
-              <span key={index}>
-                {skill}
-                {index === skills.length - 1 ? " など" : "，"}
-              </span>
-            );
-          })}
+          <p>{skills}</p>
         </div>
         <Link href="https://github.com/osayubot">
           <a className={styles.social}>

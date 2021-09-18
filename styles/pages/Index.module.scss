@@ -26,6 +26,9 @@
   line-height: 2;
   display: block;
   width: 90%;
+  p {
+    overflow-wrap: break-word;
+  }
 }
 
 .code {
