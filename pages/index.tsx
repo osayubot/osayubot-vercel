@@ -55,7 +55,7 @@ const Index = (): JSX.Element => {
       <code className={styles.code}>
         {<span>{titleStr.slice(0, count + 1)}</span>}
       </code>
-
+      <br />
       <div className={styles.icon}>
         <Image src="/icon.png" alt="osayu" width={216} height={216} />
       </div>

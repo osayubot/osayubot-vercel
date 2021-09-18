@@ -1,10 +1,9 @@
 @import "../variables.scss";
 .container {
   padding: 0 0.5rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  display: block;
+  width: 100%;
+  text-align: center;
 }
 
 .profile {
@@ -35,10 +34,11 @@
   border-radius: 5px;
   padding: 0.75rem;
   font-size: 2rem;
-  white-space: pre-line;
-  margin: 4rem 0;
   font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
     Bitstream Vera Sans Mono, Courier New, monospace;
+  @media (max-width: 480px) {
+    white-space: pre-line;
+  }
 }
 
 .grid {
@@ -83,6 +83,8 @@
   position: relative;
   background-color: $blue;
   padding: 4px 4px 0 4px;
+  margin-top: 2em;
+  display: inline-block;
   &:before {
     content: "";
     background-color: $white;
