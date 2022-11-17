@@ -1,0 +1,101 @@
+@import "../variables.scss";
+
+.container {
+  width: 100%;
+  min-height: 100vh;
+  flex-direction: row;
+  padding: 80px 0 60px;
+  position: absolute;
+  z-index: 10;
+  bottom: 0;
+  background: rgb(105, 153, 203);
+}
+
+.left {
+  margin: 20px 0;
+  margin-left: 50px;
+  margin-right: 30%;
+  .message {
+    background: $white;
+  }
+}
+
+.right {
+  margin: 20px 0;
+  margin-right: 50px;
+  margin-left: 30%;
+  text-align: end;
+  .message {
+    background: $green;
+  }
+}
+
+.icon {
+  position: absolute;
+  animation: appear 1s ease 0s 1 forwards;
+}
+
+.youtube {
+  position: absolute;
+  right: 4px;
+  bottom: 11px;
+}
+
+.message {
+  border-radius: 8px;
+  padding: 6px 16px;
+  animation: appear 1s ease 0s 1 forwards;
+  display: inline-block;
+  justify-content: center;
+  line-height: 2;
+  color: $black;
+  margin-left: 80px;
+  text-align: start;
+  a {
+    color: #1a73e8;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+}
+
+.kirinuki {
+  position: relative;
+  border-radius: 8px;
+  animation: appear 1s ease 0s 1 forwards;
+  display: inline-block;
+  justify-content: center;
+  line-height: 2;
+  color: $black;
+  margin-left: 80px;
+  margin-top: 10px;
+  background: $white;
+  opacity: 0.8;
+  text-align: start;
+  :hover {
+    opacity: 1;
+  }
+  img {
+    border-radius: 8px 8px 0 0;
+  }
+  h3 {
+    transform: translateY(-4px);
+    margin-left: 16px;
+  }
+  p {
+    margin-left: 16px;
+    transform: translateY(-10px);
+    color: gray;
+  }
+}
+
+@keyframes appear {
+  0% {
+    opacity: 0;
+  }
+  99% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

@@ -2,7 +2,7 @@ import { useState } from "react";
 import Head from "next/head";
 import Link from "next/link";
 import Image from "next/image";
-
+import { useRouter } from "next/router";
 import "../styles/globals.scss";
 
 function MyApp({ Component, pageProps }) {
@@ -48,6 +48,8 @@ function MyApp({ Component, pageProps }) {
     );
   };
 
+  const router = useRouter();
+
   return (
     <div className="container">
       <Head>
@@ -64,12 +66,13 @@ function MyApp({ Component, pageProps }) {
         <meta property="og:image" content="/icon.png" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Navbar />
+
+      {router.asPath.indexOf("demo") === -1 && <Navbar />}
 
       <main className="main">
         <Component {...pageProps} />
       </main>
-      <Footer />
+      {router.asPath.indexOf("demo") === -1 && <Footer />}
     </div>
   );
 }
