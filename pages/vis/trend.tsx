@@ -11,14 +11,17 @@ const ErrorPage = (): JSX.Element => {
   const [jsonData2, setJsonData2] = useState<any>(null);
   const [startDate, setStartDate] = useState<Date>(null);
   const [endDate, setEndDate] = useState<Date>(null);
+  const [loading, setLoading] = useState<boolean>(false);
   const { Type, CSVDownloader } = useCSVDownloader();
 
   async function createCsv() {
+    setLoading(true);
     const res = await axios("/api/trend", {
       method: "POST",
       data: keywords,
       headers: { "Content-Type": "application/json" },
     });
+    setLoading(false);
     if (res.data) {
       const jsons = res.data;
       let removeKeyword = [];
@@ -103,36 +106,43 @@ const ErrorPage = (): JSX.Element => {
   return (
     <div className={styles.container}>
       <div className={styles.block}>
-        <h4>google trends to flourish csv</h4>
+        <h2 className={styles.title}>google trends to flourish csv</h2>
+        <p className={styles.small}>
+          対象の年月と比較したいキーワードを設定して、
+        </p>
+        <p className={styles.small}>CSV作成ボタンを押してください</p>
       </div>
       <div className={styles.block}>
-        <select
-          onChange={(e) => {
-            const option = e.target.value;
-            const year = Number(option.split("/")[0]);
-            const month = Number(option.split("/")[1]);
-            setStartDate(new Date(year, month));
-          }}
-        >
-          <option>開始日</option>
-          {getOptions().map((option, index) => {
-            return <option key={index}>{option}</option>;
-          })}
-        </select>
-        <span>〜</span>
-        <select
-          onChange={(e) => {
-            const option = e.target.value;
-            const year = Number(option.split("/")[0]);
-            const month = Number(option.split("/")[1]);
-            setEndDate(new Date(year, month));
-          }}
-        >
-          <option>終了日</option>
-          {getOptions().map((option, index) => {
-            return <option key={index}>{option}</option>;
-          })}
-        </select>
+        <label>
+          日付
+          <select
+            onChange={(e) => {
+              const option = e.target.value;
+              const year = Number(option.split("/")[0]);
+              const month = Number(option.split("/")[1]);
+              setStartDate(new Date(year, month));
+            }}
+          >
+            <option>開始日</option>
+            {getOptions().map((option, index) => {
+              return <option key={index}>{option}</option>;
+            })}
+          </select>
+          <span>〜</span>
+          <select
+            onChange={(e) => {
+              const option = e.target.value;
+              const year = Number(option.split("/")[0]);
+              const month = Number(option.split("/")[1]);
+              setEndDate(new Date(year, month));
+            }}
+          >
+            <option>終了日</option>
+            {getOptions().map((option, index) => {
+              return <option key={index}>{option}</option>;
+            })}
+          </select>
+        </label>
         {dateError && (
           <p className={styles.error}>エラー:終了日が開始日より早いです</p>
         )}
@@ -225,6 +235,7 @@ const ErrorPage = (): JSX.Element => {
           </p>
         )}
       </div>
+      {loading && <div className={styles.loading} />}
     </div>
   );
 };
